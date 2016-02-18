@@ -1,0 +1,79 @@
+% set personal infos + logo
+\titlegraphic{\vfill\includegraphics[width = 3cm]{ki-logo_vert_neg_1}}
+
+
+% the various libraries we will be using
+\usepackage[none]{hyphenat}
+\usepackage{fontspec}
+
+% outertheme
+\useoutertheme{miniframes}
+
+% define colors:
+\definecolor{kiplum}{RGB}{135,0,82}
+\definecolor{kisilver}{RGB}{128,128,128}
+\definecolor{kifrost}{RGB}{202,202,202}
+\definecolor{kicyclamen}{RGB}{212,9,99}
+\definecolor{kiaqua}{RGB}{159,230,233}
+
+% set colours
+\setbeamercolor{itemize item}{fg=kiaqua}
+\setbeamercolor{enumerate item}{fg=kiaqua}
+
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{frametitle}{fg=kiplum}
+
+\setbeamercolor{section in head/foot}{fg=white, bg=kiplum}
+\setbeamercolor{subsection in head/foot}{fg=white, bg=kiplum!95}
+\setbeamercolor{alerted text}{fg=kiplum}
+%\setbeamercolor{footline}{fg=kisilver}
+\setbeamercolor{footlinecolor}{fg=white, bg=kiplum!95}
+
+% set fonts
+
+\setmainfont{Lato}
+\setsansfont{Crimson Text}
+\setmonofont{Droid Sans Mono}
+
+\setbeamerfont{title}{family=\rm}
+\setbeamerfont{author}{family=\rm}
+\setbeamerfont{date}{family=\rm, size=\small}
+\setbeamerfont{frametitle}{family=\rm}
+\setbeamerfont{footline}{family=\rm}
+\setbeamerfont{section in head/foot}{family=\rm}
+
+
+% background of title page
+\setbeamertemplate{background canvas}{%
+    \ifnum\c@framenumber=0%
+        % On title page
+        \color{kiplum}\rule{\paperwidth}{\paperheight}
+    \fi%
+}
+
+\makeatother
+
+% disable navigation
+\setbeamertemplate{navigation symbols}{}
+
+% add section titles
+\AtBeginSection{\subsection{}}
+
+% footline
+\setbeamertemplate{footline}{%
+    \begin{beamercolorbox}[wd=\paperwidth, ht=.03\paperheight, dp=1ex, right, rightskip=2mm, leftskip=2mm]{subsection in head/foot}
+        \insertshortauthor\hfill\hfill\insertframenumber/\inserttotalframenumber%
+    \end{beamercolorbox}
+}
+
+%\setbeamertemplate{footline}[text line]{
+%  \parbox[][.033\paperheight][c]{\linewidth}{\hfill\insertframenumber/\inserttotalframenumber}}
+
+
+% remove line before footnote:
+\renewcommand*\footnoterule{}
+
+% set beamer covered text:
+\setbeamercovered{transparent}
