@@ -7,34 +7,43 @@
 \usepackage{fontspec}
 
 % outertheme
-\useoutertheme{miniframes}
+\ifsplit
+  \useoutertheme{split}
+\else
+  \useoutertheme{miniframes}
+\fi
 
 % define colors:
-\definecolor{kiplum}{RGB}{135,0,82}
-\definecolor{kisilver}{RGB}{128,128,128}
-\definecolor{kifrost}{RGB}{202,202,202}
-\definecolor{kicyclamen}{RGB}{212,9,99}
-\definecolor{kiaqua}{RGB}{159,230,233}
+\definecolor{kiplum}{RGB}{135, 0, 82}
+\definecolor{kisilver}{RGB}{128, 128, 128}
+\definecolor{kifrost}{RGB}{202, 202, 202}
+\definecolor{kicyclamen}{RGB}{212, 9, 99}
+\definecolor{kiaqua}{RGB}{159, 230, 233}
 
 % set colours
-\setbeamercolor{itemize item}{fg=kiaqua}
-\setbeamercolor{enumerate item}{fg=kiaqua}
+\setbeamercolor{itemize item}{fg = kiaqua}
+\setbeamercolor{enumerate item}{fg = kiaqua}
 
-\setbeamercolor{title}{fg=white}
-\setbeamercolor{author}{fg=white}
-\setbeamercolor{date}{fg=white}
-\setbeamercolor{frametitle}{fg=kiplum}
+\setbeamercolor{title}{fg = white}
+\setbeamercolor{author}{fg = white}
+\setbeamercolor{date}{fg = white}
+\setbeamercolor{frametitle}{fg = kiplum}
 
-\setbeamercolor{section in head/foot}{fg=white, bg=kiplum}
-\setbeamercolor{subsection in head/foot}{fg=white, bg=kiplum!95}
-\setbeamercolor{alerted text}{fg=kiplum}
-%\setbeamercolor{footline}{fg=kisilver}
-\setbeamercolor{footlinecolor}{fg=white, bg=kiplum!95}
+\setbeamercolor{section in toc}{fg = kiplum}
+\setbeamercolor{author in head/foot}{fg = white, bg = kiplum}
+\setbeamercolor{title in head/foot}{fg = white, bg = kiplum!90}
+\setbeamercolor{date in head/foot}{fg = white, bg = kiplum!80}
+\setbeamercolor{section in head/foot}{fg = white, bg = kiplum}
+\setbeamercolor{subsection in head/foot}{fg = white, bg = kiplum!90}
+\setbeamercolor{alerted text}{fg = kicyclamen}
+\setbeamercolor{footline}{fg = kisilver}
+\setbeamercolor{footlinecolor}{fg = white, bg = kiplum}
 
 % set fonts
+% download and install required fonts here: https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic,700,700italic
 
-\setmainfont{Lato}
-\setsansfont{Crimson Text}
+\setmainfont{Droid Sans}
+\setsansfont{Droid Serif}
 \setmonofont{Droid Sans Mono}
 
 \setbeamerfont{title}{family=\rm}
@@ -42,8 +51,12 @@
 \setbeamerfont{date}{family=\rm, size=\small}
 \setbeamerfont{frametitle}{family=\rm}
 \setbeamerfont{footline}{family=\rm}
+\setbeamerfont{author in head/foot}{family=\rm}
+\setbeamerfont{title in head/foot}{family=\rm}
 \setbeamerfont{section in head/foot}{family=\rm}
-
+\setbeamerfont{subsection in head/foot}{family=\rm}
+\setbeamerfont{date in head/foot}{family=\rm}
+\setbeamerfont{section in toc}{family=\rm}
 
 % background of title page
 \setbeamertemplate{background canvas}{%
@@ -58,18 +71,21 @@
 % disable navigation
 \setbeamertemplate{navigation symbols}{}
 
-% add section titles
-\AtBeginSection{\subsection{}}
-
-% footline
-\setbeamertemplate{footline}{%
-    \begin{beamercolorbox}[wd=\paperwidth, ht=.03\paperheight, dp=1ex, right, rightskip=2mm, leftskip=2mm]{subsection in head/foot}
-        \insertshortauthor\hfill\hfill\insertframenumber/\inserttotalframenumber%
-    \end{beamercolorbox}
+% customize footline
+\setbeamertemplate{footline}
+{
+  \hbox{%
+  \begin{beamercolorbox}[wd = .333333\paperwidth, ht = .03\paperheight, dp=1ex, center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd = .333333\paperwidth, ht = .03\paperheight, dp = 1ex, center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd = .333333\paperwidth, ht = .03\paperheight, dp = 1ex, right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
 }
-
-%\setbeamertemplate{footline}[text line]{
-%  \parbox[][.033\paperheight][c]{\linewidth}{\hfill\insertframenumber/\inserttotalframenumber}}
 
 
 % remove line before footnote:
@@ -77,3 +93,21 @@
 
 % set beamer covered text:
 \setbeamercovered{transparent}
+
+% section and subsection titles
+\AtBeginSection[]{
+    \ifsplit
+      \begin{frame}[plain]
+          \frametitle{Table of Content}
+          \tableofcontents[currentsection]
+      \end{frame}
+      \addtocounter{framenumber}{-1}
+    \else
+      \begin{frame}[plain]
+          \frametitle{Table of Content}
+          \tableofcontents[currentsection]
+      \end{frame}
+      \addtocounter{framenumber}{-1}
+      \subsection{}
+    \fi
+}
