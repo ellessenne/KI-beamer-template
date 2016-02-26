@@ -1,11 +1,11 @@
 # KI Beamer Template
 
-A beamer template inspired by Karolinska Institutet. The template is consistent with the Karolinska Institutet graphic identity guidelines, see [here]{https://internwebben.ki.se/en/graphic-rules} for more information.
+A beamer template inspired by Karolinska Institutet. The template is consistent with the Karolinska Institutet graphic identity guidelines, see [here](https://internwebben.ki.se/en/graphic-rules) for more information.
 
 ## Requirements
 
 1. `xelatex` to use custom fonts;
-2. [These]{https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic,700,700italic} fonts.
+2. [These](https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic,700,700italic) fonts.
 
 ## Usage
 
