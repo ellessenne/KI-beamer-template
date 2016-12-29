@@ -39,24 +39,41 @@
 \setbeamercolor{footline}{fg = kisilver}
 \setbeamercolor{footlinecolor}{fg = white, bg = kiplum}
 
-% set fonts
-% download and install required fonts here: https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic,700,700italic
+% set fonts, downloaded from fonts.google.com
+% set directory with all the fonts:
+\newcommand*{\fontdir}[1][Fonts/]{\def\@fontdir{#1}}
+\fontdir
 
-\setmainfont{Droid Sans}
-\setsansfont{Droid Serif}
-\setmonofont{Droid Sans Mono}
+% main font (serif) for titles:
+\setromanfont{ScopeOne}[
+  Path = \@fontdir,
+  UprightFont = *-Regular,
+]
 
-\setbeamerfont{title}{family=\rm}
-\setbeamerfont{author}{family=\rm}
-\setbeamerfont{date}{family=\rm, size=\small}
-\setbeamerfont{frametitle}{family=\rm}
-\setbeamerfont{footline}{family=\rm}
-\setbeamerfont{author in head/foot}{family=\rm}
-\setbeamerfont{title in head/foot}{family=\rm}
-\setbeamerfont{section in head/foot}{family=\rm}
-\setbeamerfont{subsection in head/foot}{family=\rm}
-\setbeamerfont{date in head/foot}{family=\rm}
-\setbeamerfont{section in toc}{family=\rm}
+% mono font for code:
+\setmonofont{RobotoMono}[
+  Path=\@fontdir,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-Bold,
+  BoldItalicFont = *-BoldItalic
+]
+
+% sans serif font for everything else
+\setsansfont{Roboto}[
+  Path=\@fontdir,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+]
+
+\setbeamerfont{title}{family=\rmfamily, size=\Large}
+\setbeamerfont{subtitle}{family=\rmfamily}
+\setbeamerfont{author}{family=\rmfamily, size=\small}
+\setbeamerfont{institute}{family=\rmfamily, size=\footnotesize}
+\setbeamerfont{date}{family=\rmfamily, size=\footnotesize}
+\setbeamerfont{frametitle}{family=\rmfamily}
 
 % background of title page
 \setbeamertemplate{background canvas}{%

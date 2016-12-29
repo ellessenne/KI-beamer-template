@@ -15,45 +15,67 @@
 
 \begin{document}
 
-	\begin{frame}[noframenumbering, plain]
-		\titlepage
-	\end{frame}
+\begin{frame}[noframenumbering, plain]
+\titlepage
+\end{frame}
 
-	\section{Section 1}
-		\begin{frame}
-			\frametitle{Slide 1.1}
-			\blindtext
-		\end{frame}
-		\begin{frame}
-			\frametitle{Slide 1.2}
-			\blindtext
-		\end{frame}
+\section{Section 1}
 
-	\section{Section 2}
-		\begin{frame}
-			\frametitle{Slide 2.1}
-			\blindtext
-		\end{frame}
-		\begin{frame}
-			\frametitle{Slide 2.2}
-			\blindtext
-		\end{frame}
+\begin{frame}
+\frametitle{Slide 1.1}
+\blindtext
+\end{frame}
 
-	\section{Section 3}
-		\begin{frame}
-			\frametitle{Slide 3.1}
-			\blindtext
-		\end{frame}
-		\begin{frame}
-			\frametitle{Slide 3.2}
-			\blindtext
-		\end{frame}
-		\begin{frame}
-			\frametitle{Slide 3.3}
-			\blindtext
-		\end{frame}
-		\begin{frame}
-			\frametitle{Slide 3.4}
-			\blindtext
-		\end{frame}
+\begin{frame}
+\frametitle{Slide 1.2}
+\blindtext
+\end{frame}
+
+\section{Section 2}
+
+\begin{frame}
+\frametitle{Slide 2.1}
+\blindtext
+\end{frame}
+
+\begin{frame}
+\frametitle{Slide 2.2}
+\blindtext
+\end{frame}
+
+\section{Section 3}
+
+\begin{frame}
+\frametitle{Slide 3.1}
+\blindtext
+\end{frame}
+
+\begin{frame}
+\frametitle{Slide 3.2}
+\blindtext
+\end{frame}
+
+\begin{frame}
+\frametitle{Slide 3.3}
+\blindtext
+\end{frame}
+
+\begin{frame}
+\frametitle{Slide 3.4}
+\blindtext
+\end{frame}
+
+\section{Section 4}
+
+\begin{frame}[fragile] % slides with a verbatim environment need to be 'fragile'
+\frametitle{Slide 4.1}
+A slide with code:
+\begin{verbatim}
+x <- rnorm(10)
+y <- rnorm(10)
+plot(x, y)
+\end{verbatim}
+\end{frame}
+% this needs to be on a line on its own, otherwise will throw an error
+
 \end{document}

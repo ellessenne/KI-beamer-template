@@ -1,0 +1,7 @@
+\frametitle{Slide 4.1}
+A slide with code:
+\begin{verbatim}
+x <- rnorm(10)
+y <- rnorm(10)
+plot(x, y)
+\end{verbatim}
