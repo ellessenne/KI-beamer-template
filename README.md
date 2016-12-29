@@ -5,7 +5,7 @@ A beamer template inspired by Karolinska Institutet. The template is consistent 
 ## Requirements
 
 1. `xelatex` to use custom fonts;
-2. Custom fonts: `Roboto`, `Roboto Mono`, and `Scope One`; they can be obtained from [Google Fonts](fonts.google.com).
+2. Custom fonts: `Roboto`, `Roboto Mono`, and `Scope One`; they can be obtained from [Google Fonts](https://fonts.google.com).
 
 ## Usage
 
@@ -19,4 +19,4 @@ It is possible to switch from a `miniframes` outer theme with navigation dots to
 
 ## License
 
-All rights related to the logo are property of Karolinska Institutet. All rights related to the fonts used in this theme are property of the respective copyright holders (see their page on [Google Fonts](fonts.google.com) for further details). This template is under MIT license. See `LICENSE` file for more information.
+All rights related to the logo are property of Karolinska Institutet. All rights related to the fonts used in this theme are property of the respective copyright holders (see their page on [Google Fonts](https://fonts.google.com) for further details). This template is under MIT license. See `LICENSE` file for more information.
