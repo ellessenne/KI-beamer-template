@@ -1,0 +1,53 @@
+
+#+TITLE:     A very nice title
+#+AUTHOR:    Author
+#+DATE:      \today
+
+#+OPTIONS: H:2 toc:nil num:t
+#+LaTeX_CLASS: beamer
+#+BEAMER_THEME: KI
+
+#+latex_header: \usepackage{blindtext} % to fill up slides
+
+#+latex_header: \newif\ifsplit
+# Don't delete:
+# It is necessary for switching from one outer theme to the other. By default, a miniframes outer theme is used for the header. Uncomment the following line to switch to a split outer theme:
+# +latex_header: \splittrue
+# I suggest using the split outer theme if subsections are meaningful, miniframes otherwise.
+
+#+latex: \begin{frame}[noframenumbering, plain]
+#+latex: \titlepage
+#+latex: \end{frame}
+
+* Section 1
+
+** Slide 1.1
+\blindtext
+
+** Slide 1.2
+\blindtext
+
+* Section 2
+
+** Slide 2.1
+\blindtext
+
+** Slide 2.2
+\blindtext
+
+* Section 3
+
+** Slide 3.1
+:PROPERTIES:
+:BEAMER_OPT: fragile
+:END:
+*** A slide with code:
+\begin{verbatim}
+x <- rnorm(10)
+y <- rnorm(10)
+plot(x, y)
+\end{verbatim}
+
+# Local Variables:
+# eval: (progn (defun my-latex-hook (backend) (setq org-latex-pdf-process (list "sed -i 's/[\\\\]maketitle//' %f; latexmk -pdflatex=xelatex -pdf -quiet %f"))) (add-hook 'org-export-before-parsing-hook #'my-latex-hook))
+# End:
