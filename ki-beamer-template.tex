@@ -1,6 +1,6 @@
-%!TEX program = xelatex
 \documentclass{beamer}
 \usepackage{blindtext} % to fill up slides
+\usepackage{verbatim}
 
 % Don't delete:
 \newif\ifsplit
@@ -77,5 +77,22 @@ plot(x, y)
 \end{verbatim}
 \end{frame}
 % this needs to be on a line on its own, otherwise will throw an error
+
+\begin{frame}[fragile]
+    \frametitle{Slide 4.2}
+
+    \alert{Some \texttt{alert} text.}
+
+    \begin{itemize}
+        \item One,
+        \item Two,
+        \item Three:
+        \begin{enumerate}
+            \item A,
+            \item B,
+            \item C.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
 
 \end{document}

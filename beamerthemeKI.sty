@@ -1,10 +1,8 @@
 % set personal infos + logo
 \titlegraphic{\vfill\includegraphics[width = 3cm]{ki-logo_vert_neg_1}}
 
-
 % the various libraries we will be using
 \usepackage[none]{hyphenat}
-\usepackage{fontspec}
 
 % outertheme
 \ifsplit
@@ -23,6 +21,8 @@
 % set colours
 \setbeamercolor{itemize item}{fg = kiaqua}
 \setbeamercolor{enumerate item}{fg = kiaqua}
+\setbeamercolor{itemize subitem}{fg = kiaqua}
+\setbeamercolor{enumerate subitem}{fg = kiaqua}
 
 \setbeamercolor{title}{fg = white}
 \setbeamercolor{author}{fg = white}
@@ -39,41 +39,14 @@
 \setbeamercolor{footline}{fg = kisilver}
 \setbeamercolor{footlinecolor}{fg = white, bg = kiplum}
 
-% set fonts, downloaded from fonts.google.com
-% set directory with all the fonts:
-\newcommand*{\fontdir}[1][Fonts/]{\def\@fontdir{#1}}
-\fontdir
+\setbeamerfont{title}{size=\Large}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{institute}{size=\footnotesize}
+\setbeamerfont{date}{size=\footnotesize}
 
-% main font (serif) for titles:
-\setromanfont{ScopeOne}[
-  Path = \@fontdir,
-  UprightFont = *-Regular,
-]
-
-% mono font for code:
-\setmonofont{RobotoMono}[
-  Path=\@fontdir,
-  UprightFont = *-Regular,
-  ItalicFont = *-Italic,
-  BoldFont = *-Bold,
-  BoldItalicFont = *-BoldItalic
-]
-
-% sans serif font for everything else
-\setsansfont{Roboto}[
-  Path=\@fontdir,
-  UprightFont = *-Regular,
-  ItalicFont = *-Italic,
-  BoldFont = *-Bold,
-  BoldItalicFont = *-BoldItalic,
-]
-
-\setbeamerfont{title}{family=\rmfamily, size=\Large}
-\setbeamerfont{subtitle}{family=\rmfamily}
-\setbeamerfont{author}{family=\rmfamily, size=\small}
-\setbeamerfont{institute}{family=\rmfamily, size=\footnotesize}
-\setbeamerfont{date}{family=\rmfamily, size=\footnotesize}
-\setbeamerfont{frametitle}{family=\rmfamily}
+\usepackage[default]{sourcesanspro}
+\usepackage{sourcecodepro}
+\usepackage[T1]{fontenc}
 
 % background of title page
 \setbeamertemplate{background canvas}{%
