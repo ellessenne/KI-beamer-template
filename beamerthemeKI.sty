@@ -83,18 +83,9 @@
 
 % section and subsection titles
 \AtBeginSection[]{
-    \ifsplit
-      \begin{frame}[plain]
-          \frametitle{Table of Content}
-          \tableofcontents[currentsection]
-      \end{frame}
-      \addtocounter{framenumber}{-1}
-    \else
-      \begin{frame}[plain]
-          \frametitle{Table of Content}
-          \tableofcontents[currentsection]
-      \end{frame}
-      \addtocounter{framenumber}{-1}
-      \subsection{}
-    \fi
+  \begin{frame}[plain]
+      \frametitle{Table of Content}
+      \tableofcontents[currentsection]
+  \end{frame}
+  \addtocounter{framenumber}{-1}
 }
